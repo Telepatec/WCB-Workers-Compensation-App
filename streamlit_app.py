@@ -31,7 +31,7 @@ def get_predictions(input_data):
 def front_page():
     st.title("New York Workers' Compensation Board (WCB) Project")
 
-    st.image("WorkersClaimForm.jpg", use_column_width=True)
+    st.image("WorkersClaimForm.jpg", use_container_width=True)
 
     st.write("""
     ## Project Introduction
@@ -179,7 +179,7 @@ def visualization_page():
     - Class "7. PTD" is rarely predicted correctly due to fewer observations.
     """)
 
-    st.image("output.png", use_column_width=True)
+    st.image("output.png", use_container_width=True)
 
 # Navigation
 PAGES = {
