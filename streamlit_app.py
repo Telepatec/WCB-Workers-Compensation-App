@@ -1,10 +1,4 @@
 import streamlit as st
-
-st.title('🤖 Machine Learning App')
-
-st.info('This app builds a machine learning model!')
-
-import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
