@@ -1,3 +1,22 @@
+import streamlit as st
+import pandas as pd
+import pickle
+import os
+
+# Function to load models with error handling
+def load_model(filename):
+    try:
+        with open(filename, 'rb') as file:
+            return pickle.load(file)
+    except FileNotFoundError:
+        st.error(f"Error: {filename} not found. Ensure the model file is uploaded.")
+        return None
+
+# Load the models
+lgbm_model = load_model('lightgbm_model.pkl')
+rf_model = load_model('random_forest_model.pkl')
+xgb_model = load_model('xgboost_model.pkl')
+
 # Function to get predictions from all models
 def get_predictions(input_data):
     lgbm_pred = lgbm_model.predict(input_data)[0] if lgbm_model else None
